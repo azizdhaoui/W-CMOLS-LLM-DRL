@@ -44,6 +44,9 @@ pip install -r requirements.txt
 cd solver && python setup.py build_ext --inplace     # nécessite un compilateur C (MSVC, gcc ou clang)
 ```
 
+Sous Windows avec Python 3.12, sans compilateur : télécharger `solver_windows_python312.zip` depuis la page
+*Releases* et décompresser ses deux fichiers dans `solver/` (ils sont compilés à partir des sources de ce dossier).
+
 ## Démarrage rapide
 
 ```bash
