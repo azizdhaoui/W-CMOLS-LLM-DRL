@@ -1,7 +1,7 @@
 """Figure de la diapositive 9 : construction réelle du cloud SW-CMOLS-L sur 250.2.
 
 Voisins (cloud), 30 graines gloutonnes, et les 5 graines centrales avant / après
-la décision du LLM (encart agrandi). Sortie : presentation/figures_c1/fig_pipeline_L_250.2.png
+la décision du LLM (encart agrandi). Sortie : presentation/figures_c1/llm_cloud_construction_250.2.png
 """
 from pathlib import Path
 
@@ -17,7 +17,7 @@ import common as C
 import build_llm_cloud as P
 
 INST = "250.2"
-OUT = C.ROOT / "figures" / "out"
+OUT = C.ROOT / "figures" / "images"
 OUT.mkdir(parents=True, exist_ok=True)
 
 k, n, caps, w, p, lams, idx = P.setup(INST)
@@ -63,6 +63,6 @@ for s in ins.spines.values():
     s.set_edgecolor(PURPLE)
 ax.indicate_inset_zoom(ins, edgecolor=PURPLE, alpha=0.6)
 fig.tight_layout()
-out = OUT / f"fig_pipeline_L_{INST}.png"
+out = OUT / f"llm_cloud_construction_{INST}.png"
 fig.savefig(out, bbox_inches="tight")
 print("saved", out, [(e["seed"], e["start"], e["final"]) for e in log])

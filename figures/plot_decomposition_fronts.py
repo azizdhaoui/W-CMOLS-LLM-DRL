@@ -21,7 +21,7 @@ competitive rival, so collapsing them would remove the comparison being made.
 20 runs for every system (RUN_CAP=20) for a like-for-like point count, even
 though baseline/S1/Hyb use 50 runs in their own chapters' tables.
 
-Output -> figures/out/fig_m2wa_<inst>.png
+Output -> figures/images/fronts_decomposition_<inst>.png
 """
 from __future__ import annotations
 from pathlib import Path
@@ -35,7 +35,7 @@ from mpl_toolkits.mplot3d import Axes3D  # noqa: F401
 V3 = Path(__file__).resolve().parents[1]
 PLATEMO = V3 / "competitor_fronts"
 HV = V3 / "results" / "fronts"
-OUT = V3 / "figures" / "out"
+OUT = V3 / "figures" / "images"
 # Version finale (septembre 2026) : fronts U et UQ des clouds finaux, solveur sans réinjection.
 FINAL = V3 / "results" / "fronts"
 OUT.mkdir(parents=True, exist_ok=True)
@@ -116,7 +116,7 @@ def fig_2d(inst, data):
     ax.spines[["top", "right"]].set_visible(False)
     ax.legend(fontsize=9, loc="lower left", framealpha=0.92)
     fig.tight_layout()
-    p = OUT / f"fig_m2wa_{inst}.png"
+    p = OUT / f"fronts_decomposition_{inst}.png"
     fig.savefig(p, bbox_inches="tight")
     plt.close(fig)
     print(f"saved {p.name}")
@@ -144,7 +144,7 @@ def fig_3d(inst, data):
     ax.tick_params(labelsize=8)
     ax.legend(fontsize=8.5, loc="upper left", framealpha=0.92)
     fig.tight_layout()
-    p = OUT / f"fig_m2wa_{inst}.png"
+    p = OUT / f"fronts_decomposition_{inst}.png"
     fig.savefig(p, bbox_inches="tight")
     plt.close(fig)
     print(f"saved {p.name}")
@@ -181,7 +181,7 @@ def fig_scattermatrix(inst, data):
                  f"matrice de nuages de points (paires d'objectifs)",
                  fontsize=13, weight="bold", y=1.01)
     fig.tight_layout(rect=(0, 0.05, 1, 0.98))
-    p = OUT / f"fig_m2wa_{inst}.png"
+    p = OUT / f"fronts_decomposition_{inst}.png"
     fig.savefig(p, bbox_inches="tight")
     plt.close(fig)
     print(f"saved {p.name}")

@@ -27,7 +27,7 @@ seeding/              construction et évaluation des clouds G, L, U ; prompts e
 configuration/        modèle de coût, entraînement et évaluation de l'agent
 validation/           oracle empirique, SMAC3, temps remesurés le même jour, synthèse
 comparison/           comparaison aux concurrents, indicateur epsilon ; lanceurs des concurrents (competitors/)
-figures/              scripts des figures
+figures/              scripts des figures ; figures produites (images/)
 clouds/               greedy_<inst>, llm_<inst>, union_<inst>, llm_ablation_<inst> (L sans les décisions du LLM)
 models/               politiques entraînées (policy_*), modèles de coût, budgets, trace de décision
 results/              résultats des campagnes (JSON) et synthèses (Markdown)
@@ -125,6 +125,23 @@ aussi disponibles en une seule archive dans la page *Releases* (`pareto_fronts.z
 
 L'ensemble de référence de l'indicateur epsilon comprend aussi les fronts d'un algorithme de colonie de
 fourmis du laboratoire (`competitor_fronts/gwaco/`), non inclus.
+
+## Figures
+
+Les figures sont dans `figures/images/` et sont régénérées à l'identique par les scripts de `figures/` :
+
+| Images | Contenu | Script |
+|:---|:---|:---|
+| `fronts_seeded_<inst>.png` | W-CMOLS et variantes amorcées G, L, U | `plot_fronts.py seeded` |
+| `fronts_agent_<inst>.png` | W-CMOLS, U et variantes configurées GQ, LQ, UQ | `plot_fronts.py agent` |
+| `fronts_competitors_<inst>.png` | SW-CMOLS-UQ, W-CMOLS et quatre concurrents | `plot_competitor_fronts.py` |
+| `fronts_decomposition_<inst>.png` | SW-CMOLS-U et -UQ face à MOEA/D et MOEA-D-2WA | `plot_decomposition_fronts.py` |
+| `agent_architecture.png` | réseau de l'agent DQN | `plot_agent_architecture.py` |
+| `llm_cloud_construction_250.2.png` | construction du cloud L sur 250.2 | `plot_llm_cloud_construction.py` |
+
+![Fronts de Pareto sur l'instance 750.2](figures/images/fronts_competitors_750.2.png)
+
+![Architecture de l'agent DQN](figures/images/agent_architecture.png)
 
 ## Concurrents
 

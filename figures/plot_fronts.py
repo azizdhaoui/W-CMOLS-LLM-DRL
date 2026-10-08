@@ -1,9 +1,9 @@
 # -*- coding: utf-8 -*-
-"""Fronts de Pareto des chapitres 4 et 5 (clouds G, L, U ; variantes GQ, LQ, UQ).
+"""Fronts de Pareto de W-CMOLS, des variantes amorcées et des variantes configurées par l'agent.
 
-usage : python plot_fronts.py ch4   -> figures/fig4_<inst>.png : W, G, L, U
-        python plot_fronts.py ch5   -> figures/fig5_<inst>.png : W, U, GQ, LQ, UQ
-Fronts : results/fronts/ (50 répétitions) ; W-CMOLS : fronts canoniques (deck_data).
+usage : python plot_fronts.py seeded   -> figures/images/fronts_seeded_<inst>.png : W, G, L, U
+        python plot_fronts.py agent    -> figures/images/fronts_agent_<inst>.png  : W, U, GQ, LQ, UQ
+Fronts : results/fronts/ (50 répétitions).
 Fronts superposés, une figure par instance.
 """
 from __future__ import annotations
@@ -21,10 +21,10 @@ ROOT = HERE.parent
 sys.path[:0] = [str(ROOT), str(ROOT / "comparison")]
 import competitor_data as D  # noqa: E402
 FR = ROOT / "results" / "fronts"
-OUT = ROOT / "figures" / "out"
+OUT = ROOT / "figures" / "images"
 OUT.mkdir(parents=True, exist_ok=True)
-CH = sys.argv[1] if len(sys.argv) > 1 else "ch4"
-PREFIX = "fig4_" if CH == "ch4" else "fig5_"
+CH = {"seeded": "ch4", "agent": "ch5"}.get(sys.argv[1], sys.argv[1]) if len(sys.argv) > 1 else "ch4"
+PREFIX = "fronts_seeded_" if CH == "ch4" else "fronts_agent_"
 
 INSTANCES = ["250.2", "250.3", "250.4", "500.2", "500.3", "500.4", "750.2", "750.3", "750.4"]
 OBJ = {i: int(i.split(".")[1]) for i in INSTANCES}

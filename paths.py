@@ -11,5 +11,5 @@ MODELS = ROOT / "models"                    # politiques DQN, modèles de coût,
 RESULTS = ROOT / "results"                  # résultats des campagnes (JSON)
 FRONTS = RESULTS / "fronts"                 # fronts bruts par exécution (non versionnés)
 COMPETITOR_FRONTS = ROOT / "competitor_fronts"  # fronts bruts des concurrents (non versionnés)
-FIGURES = ROOT / "figures" / "out"          # figures produites
+FIGURES = ROOT / "figures" / "images"       # figures produites
 WORK = ROOT / "work"                        # fichiers temporaires du solveur (non versionnés)

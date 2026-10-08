@@ -10,7 +10,6 @@ work/
 
 results/pipeline/
 competitor_fronts/gwaco/
-figures/out/
 external/
 models/training_logs/*
 !models/training_logs/cost_model_runs.csv

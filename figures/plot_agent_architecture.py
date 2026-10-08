@@ -15,7 +15,7 @@ blocs, en gras, reste autour de 9 pt une fois imprime (remarque de l'encadrante)
 
 Le prefixe « Fig. 5.1 » n'est pas dans l'image : la legende Markdown l'ajoute.
 
-Output -> figures/out/fig5_architecture.png
+Output -> figures/images/agent_architecture.png
 """
 from __future__ import annotations
 from pathlib import Path
@@ -25,7 +25,7 @@ import matplotlib.pyplot as plt
 from matplotlib.patches import FancyBboxPatch, FancyArrowPatch, RegularPolygon
 
 V3 = Path(__file__).resolve().parents[1]
-OUT = V3 / "figures" / "out"
+OUT = V3 / "figures" / "images"
 OUT.mkdir(parents=True, exist_ok=True)
 
 plt.rcParams.update({"font.family": "DejaVu Sans", "figure.dpi": 150})
@@ -136,7 +136,7 @@ box(5.2, RES_Y, 4.6, 0.95, ["Configuration choisie", "(α, NBL, L, κ)"],
 arrow((COLL_X, RES_Y), (5.2 + 2.3, RES_Y), color=RESULT_EDGE, lw=1.8)
 
 fig.tight_layout()
-p = OUT / "fig5_architecture.png"
+p = OUT / "agent_architecture.png"
 fig.savefig(p, bbox_inches="tight")
 plt.close(fig)
 print(f"saved {p}")
