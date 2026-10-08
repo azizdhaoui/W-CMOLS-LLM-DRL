@@ -7,9 +7,9 @@ solver/*.pyd
 solver/*.so
 # sorties volumineuses ou temporaires
 work/
-results/fronts/
+
 results/pipeline/
-competitor_fronts/
+competitor_fronts/gwaco/
 figures/out/
 external/
 models/training_logs/*

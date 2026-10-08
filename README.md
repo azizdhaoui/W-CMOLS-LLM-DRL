@@ -95,17 +95,18 @@ RUNS=50 NOGUARD=1 CKPT_TAG=greedy python configuration/evaluate_agent.py GQ 0.8
 
 ## Fronts de Pareto
 
-Les fronts bruts ne sont pas versionnés ; ils sont fournis en archives dans la page *Releases* du dépôt :
+Les fronts bruts de toutes les exécutions sont dans le dépôt :
 
-- `pareto_fronts.zip` (53 Mo) : fronts de W-CMOLS et de nos variantes, 50 exécutions par instance
-  (`results/fronts/`), et fronts des treize concurrents, 20 exécutions (`competitor_fronts/`) ;
-- `gwaco_reference_fronts.zip` (19 Mo) : fronts d'un algorithme de colonie de fourmis du laboratoire,
-  employés seulement dans l'ensemble de référence de l'indicateur epsilon (`competitor_fronts/gwaco/`).
+- `results/fronts/` : W-CMOLS (`raw_baseline_<inst>.txt`) et nos variantes (`seeded_*`, `agent_*`),
+  50 exécutions par instance ;
+- `competitor_fronts/` : les treize concurrents, 20 exécutions par instance.
 
-Décompresser les archives à la racine du dépôt. Chaque système a deux fichiers par instance :
-`raw_*.txt` (une solution par ligne, valeurs des objectifs, exécutions à la suite) et `sizes_*.txt`
-(nombre de solutions de chaque exécution). Les fronts permettent de relancer
-`comparison/compare_competitors.py`, `comparison/our_systems_metrics.py` et les scripts de `figures/`.
+Chaque système a deux fichiers par instance : `raw_*.txt` (une solution par ligne, valeurs des objectifs,
+exécutions à la suite) et `sizes_*.txt` (nombre de solutions de chaque exécution). Les mêmes fichiers sont
+aussi disponibles en une seule archive dans la page *Releases* (`pareto_fronts.zip`).
+
+L'ensemble de référence de l'indicateur epsilon comprend aussi les fronts d'un algorithme de colonie de
+fourmis du laboratoire (`competitor_fronts/gwaco/`), non inclus.
 
 ## Concurrents
 
