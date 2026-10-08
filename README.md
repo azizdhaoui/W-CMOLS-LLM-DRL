@@ -16,6 +16,7 @@ instances de Zitzler et Thiele (1999) : 250, 500 et 750 objets, 2, 3 et 4 object
 ## Organisation
 
 ```
+demo.py               démonstration rapide (moins d'une minute)
 paths.py, common.py   emplacements du dépôt ; instances, graines gloutonnes, voisins, solveur, hypervolume
 data/instances/       neuf instances (format Zitzler-Thiele) et fichiers de vecteurs de poids de W-CMOLS
 data/reference/       bornes de normalisation de l'hypervolume et références de W-CMOLS, par instance
@@ -30,14 +31,27 @@ figures/              scripts des figures
 clouds/               greedy_<inst>, llm_<inst>, union_<inst>, llm_ablation_<inst> (L sans les décisions du LLM)
 models/               politiques entraînées (policy_*), modèles de coût, budgets, trace de décision
 results/              résultats des campagnes (JSON) et synthèses (Markdown)
+results/fronts/       fronts de Pareto de W-CMOLS et de nos variantes
+competitor_fronts/    fronts de Pareto des treize concurrents
 ```
 
 ## Installation
+
+Python 3.12.
 
 ```bash
 pip install -r requirements.txt
 cd solver && python setup.py build_ext --inplace     # nécessite un compilateur C (MSVC, gcc ou clang)
 ```
+
+## Démarrage rapide
+
+```bash
+python demo.py            # instance 250.2, 3 répétitions ; ou par exemple : python demo.py 500.4 2
+```
+
+Le script exécute W-CMOLS, puis W-CMOLS amorcé par le cloud union, puis la configuration choisie par
+l'agent DQN, et vérifie que chaque hypervolume est identique au résultat publié dans `results/`.
 
 ## Scripts et résultats
 
@@ -62,7 +76,8 @@ Toutes les exécutions emploient les mêmes germes : relancer un script reprodui
 
 ## Reproduire
 
-Commandes lancées depuis la racine du dépôt.
+Commandes lancées depuis la racine du dépôt (syntaxe bash ; sous PowerShell, définir les variables
+d'environnement avant la commande, par exemple `$env:RUNS=50`).
 
 **Amorçage.** Le cloud G est produit par `seeding/build_greedy_cloud.py`. Pour le cloud L,
 `python seeding/build_llm_cloud.py prompts` écrit un prompt par graine centrale (45 au total, dans
@@ -110,7 +125,7 @@ fourmis du laboratoire (`competitor_fronts/gwaco/`), non inclus.
 
 ## Concurrents
 
-- Les concurrents sont des implémentations publiées, employées sans modification algorithmique :
-  PlatEMO (MATLAB), PISA, mobkp et le code C++ de MOEA/D. Seuls les lanceurs et adaptateurs d'entrée/sortie
-  sont fournis (`comparison/competitors/`) ; les emplacements des binaires se règlent par variables
-  d'environnement (`PISA_DIR`, `MOEAD_SRC`, `MOEAD_EXE`, `MOBKP_BUILD`).
+Les concurrents sont des implémentations publiées, employées sans modification algorithmique :
+PlatEMO (MATLAB), PISA, mobkp et le code C++ de MOEA/D. Seuls les lanceurs et adaptateurs d'entrée/sortie
+sont fournis (`comparison/competitors/`) ; les emplacements des binaires se règlent par variables
+d'environnement (`PISA_DIR`, `MOEAD_SRC`, `MOEAD_EXE`, `MOBKP_BUILD`).
