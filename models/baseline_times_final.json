@@ -1,0 +1,65 @@
+{
+ "250.2": {
+  "baseline_time_fresh": 0.4956238842010498,
+  "baseline_time_cached": 2.4614723920822144,
+  "stale_factor": 4.966411971953551,
+  "n_runs": 50,
+  "source": "campagne finale 2026-09-24 (W-CMOLS, 50 r\u00e9p\u00e9titions)"
+ },
+ "250.3": {
+  "baseline_time_fresh": 1.206792631149292,
+  "baseline_time_cached": 5.730070114135742,
+  "stale_factor": 4.748181225368185,
+  "n_runs": 50,
+  "source": "campagne finale 2026-09-24 (W-CMOLS, 50 r\u00e9p\u00e9titions)"
+ },
+ "250.4": {
+  "baseline_time_fresh": 2.2991285800933836,
+  "baseline_time_cached": 14.180273731549581,
+  "stale_factor": 6.167673202067551,
+  "n_runs": 50,
+  "source": "campagne finale 2026-09-24 (W-CMOLS, 50 r\u00e9p\u00e9titions)"
+ },
+ "500.2": {
+  "baseline_time_fresh": 1.3753635454177857,
+  "baseline_time_cached": 6.603506604830424,
+  "stale_factor": 4.801280815411258,
+  "n_runs": 50,
+  "source": "campagne finale 2026-09-24 (W-CMOLS, 50 r\u00e9p\u00e9titions)"
+ },
+ "500.3": {
+  "baseline_time_fresh": 3.3042601346969604,
+  "baseline_time_cached": 16.562252561251324,
+  "stale_factor": 5.0123936633609745,
+  "n_runs": 50,
+  "source": "campagne finale 2026-09-24 (W-CMOLS, 50 r\u00e9p\u00e9titions)"
+ },
+ "500.4": {
+  "baseline_time_fresh": 7.557732210159302,
+  "baseline_time_cached": 50.248215436935425,
+  "stale_factor": 6.648583733807141,
+  "n_runs": 50,
+  "source": "campagne finale 2026-09-24 (W-CMOLS, 50 r\u00e9p\u00e9titions)"
+ },
+ "750.2": {
+  "baseline_time_fresh": 2.8094122886657713,
+  "baseline_time_cached": 14.811021526654562,
+  "stale_factor": 5.271928789664589,
+  "n_runs": 50,
+  "source": "campagne finale 2026-09-24 (W-CMOLS, 50 r\u00e9p\u00e9titions)"
+ },
+ "750.3": {
+  "baseline_time_fresh": 6.104616799354553,
+  "baseline_time_cached": 31.36862011750539,
+  "stale_factor": 5.138507648968568,
+  "n_runs": 50,
+  "source": "campagne finale 2026-09-24 (W-CMOLS, 50 r\u00e9p\u00e9titions)"
+ },
+ "750.4": {
+  "baseline_time_fresh": 14.416304917335511,
+  "baseline_time_cached": 87.51709016164143,
+  "stale_factor": 6.070701935306787,
+  "n_runs": 50,
+  "source": "campagne finale 2026-09-24 (W-CMOLS, 50 r\u00e9p\u00e9titions)"
+ }
+}

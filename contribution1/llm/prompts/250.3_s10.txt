@@ -1,0 +1,26 @@
+Instance 250.3, seed 10. lambda = [0.2, 0.467, 0.333]
+GOAL: raise S = sum_k lambda_k*f_k, every knapsack within capacity. No gain -> empty lists.
+Free capacity = [9, 200, 160]   f = [8389, 9351, 8459]   S = 8861.3
+REMOVE candidates (in bag, lowest ratio):
+  222  w=[14, 90, 29] v=39.2
+  186  w=[13, 40, 85] v=42.5
+  24   w=[25, 100, 53] v=54.5
+  55   w=[91, 54, 76] v=67.6
+  110  w=[83, 23, 67] v=53.2
+  248  w=[64, 41, 47] v=47.0
+  207  w=[78, 93, 37] v=64.1
+  195  w=[77, 48, 33] v=48.8
+  158  w=[44, 57, 70] v=53.7
+  12   w=[17, 29, 54] v=31.9
+ADD candidates (outside, highest ratio), need = room missing per knapsack:
+  169  w=[79, 73, 85] v=72.1 need=[70, 0, 0]
+  80   w=[67, 93, 39] v=60.0 need=[58, 0, 0]
+  168  w=[78, 81, 28] v=55.7 need=[69, 0, 0]
+  90   w=[51, 33, 57] v=42.5 need=[42, 0, 0]
+  93   w=[54, 98, 70] v=66.8 need=[45, 0, 0]
+  196  w=[38, 91, 92] v=66.8 need=[29, 0, 0]
+  115  w=[93, 42, 38] v=51.0 need=[84, 0, 0]
+  126  w=[44, 10, 45] v=29.6 need=[35, 0, 0]
+  107  w=[97, 94, 62] v=74.9 need=[88, 0, 0]
+  156  w=[54, 59, 39] v=45.0 need=[45, 0, 0]
+Answer: {"remove": [...], "add": [...]}

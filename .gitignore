@@ -1,0 +1,16 @@
+__pycache__/
+*.pyc
+# solveur compilé (python setup.py build_ext --inplace)
+solver/build/
+solver/*.c
+solver/*.pyd
+solver/*.so
+# sorties volumineuses ou temporaires
+work/
+results/fronts/
+results/pipeline/
+competitor_fronts/
+figures/out/
+external/
+models/logs_v3/*
+!models/logs_v3/competitor_training_log.csv

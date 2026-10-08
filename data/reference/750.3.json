@@ -1,0 +1,30 @@
+{
+  "instance": "750.3",
+  "n_objectives": 3,
+  "n_items": 750,
+  "n_baseline_runs": 6,
+  "bounds_low": [
+    23054.48,
+    22515.62,
+    22744.51
+  ],
+  "bounds_high": [
+    31165.52,
+    29796.38,
+    30546.49
+  ],
+  "baseline_hv_mean": 0.4004802026718297,
+  "baseline_hv_std": 0.0024800185216442496,
+  "baseline_hv_min": 0.3966918104069772,
+  "baseline_hv_max": 0.4032913146299858,
+  "baseline_run_time": 31.36862011750539,
+  "n_fronts_for_bounds": 30,
+  "configs_used": [
+    "baseline_default",
+    "llm_default",
+    "llm_explore_high",
+    "llm_explore_low",
+    "llm_mid"
+  ],
+  "bounds_source": "union(baseline + llm_default + llm_explore \u00d7 3)"
+}
