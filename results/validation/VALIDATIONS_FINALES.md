@@ -1,6 +1,6 @@
 # Validations refaites sur l'agent final
 
-Hors rapport tant que l'utilisateur n'a pas dit oui. Généré par `val_summary.py`.
+Généré par `val_summary.py`.
 
 ## 1. Écart à l'oracle empirique (agent UQ final, cloud union)
 

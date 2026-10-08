@@ -12,7 +12,7 @@
     "750.4": 15.447346019744874
   },
   "mu_speed_bonus": 0.03,
-  "warm_start": "A:\\utude\\programme 2eme\\20-4-2026 after meet (llm not blind)\\6-5-2026 final\\DQN_v3_Project\\results\\ckpt_v31_hybrid_b1\\checkpoint.pt",
-  "cost_model": "cost_model_v31.json",
-  "fresh_times": "baseline_times_fresh.json"
+  "warm_start": "models/ckpt_v31_hybrid_b1/checkpoint.pt",
+  "cost_model": "models/cost_model_v31.json",
+  "fresh_times": "models/baseline_times_fresh.json"
 }

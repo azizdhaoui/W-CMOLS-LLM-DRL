@@ -12,9 +12,9 @@
     "750.4": 11.53304393386841
   },
   "mu_speed_bonus": 0.03,
-  "warm_start": "results\\ckpt_v31_greedy_b1_n10\\checkpoint.pt",
-  "cost_model": "results\\cost_model_final_G.json",
-  "fresh_times": "results\\baseline_times_final.json",
+  "warm_start": "models/ckpt_v31_greedy_b1_n10/checkpoint.pt",
+  "cost_model": "models/cost_model_final_G.json",
+  "fresh_times": "models/baseline_times_final.json",
   "solver": "noreinj",
   "seeds_pattern": null,
   "lambda3": 0.1,

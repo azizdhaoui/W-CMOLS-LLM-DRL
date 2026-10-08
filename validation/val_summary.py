@@ -205,7 +205,7 @@ def retime_part(md):
 def main():
     OUT.mkdir(parents=True, exist_ok=True)
     md = ["# Validations refaites sur l'agent final", "",
-          "Hors rapport tant que l'utilisateur n'a pas dit oui. Généré par `val_summary.py`.", ""]
+          "Généré par `val_summary.py`.", ""]
     oracle_part(md); loo_part(md); abl_part(md); smac_part(md)
     smac_part(md, "_reward", "## 5. SMAC3 avec la note de l'agent (HV + cardinalité − pénalité de temps), mêmes conditions", old=False)
     sameday_part(md)
