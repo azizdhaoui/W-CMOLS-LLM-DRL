@@ -1,6 +1,6 @@
 """
 v3 action grids — FINAL, chosen from measured 1D response profiles (Phase 1,
-2026-06-11, results/profiles_1d.json). Value-by-value justification with the
+2026-06-11, results/grid_sensitivity_profiles.json). Value-by-value justification with the
 measured curves: GRID_DESIGN_V3.md.
 
 Summary of the data:

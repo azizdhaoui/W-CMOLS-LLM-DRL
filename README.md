@@ -65,6 +65,8 @@ l'agent DQN, et vérifie que chaque hypervolume est identique au résultat publi
 | W-CMOLS et variantes amorcées G, L, U | `seeding/evaluate_seeded_solver.py` | `results/{wcmols,seeded_greedy,seeded_llm,seeded_union}_<inst>.json` |
 | Tests statistiques de l'amorçage | `seeding/summarize_seeding_results.py` | `results/seeding_results_summary.md` |
 | Effet propre des décisions du LLM | `seeding/evaluate_seeded_solver.py ctrl`, `seeding/llm_effect_test.py` | `results/seeded_llm_ablation_*`, `results/llm_effect_summary.md` |
+| Balayage tronqué des vecteurs de poids (couverture du simplexe) | `figures/plot_weight_sweep.py` | vérification affichée, `figures/images/weight_sweep_truncation.png` |
+| Sensibilité de chaque paramètre (bornes des grilles) | `configuration/grid_sensitivity_profiles.py` | `results/grid_sensitivity_profiles.json` |
 | Modèle de coût | `configuration/fit_cost_model.py`, `configuration/calibrate_cost_model.py` | `models/cost_model_*.json` |
 | Variantes configurées GQ, LQ, UQ | `configuration/train_agent.py`, `configuration/evaluate_agent.py` | `results/agent_*_budget0.8.json`, `results/agent_results_summary.md` |
 | Politique appliquée sans cloud | `configuration/evaluate_agent.py WQ` | `results/agent_no_cloud_budget0.8.json` |
@@ -150,6 +152,10 @@ Les figures sont dans `figures/images/` et sont régénérées à l'identique pa
 | `fronts_decomposition_<inst>.png` | SW-CMOLS-U et -UQ face à MOEA/D et MOEA-D-2WA | `plot_decomposition_fronts.py` |
 | `agent_architecture.png` | réseau de l'agent DQN | `plot_agent_architecture.py` |
 | `llm_cloud_construction_250.2.png` | construction du cloud L sur 250.2 | `plot_llm_cloud_construction.py` |
+| `concept_dominance.png`, `concept_hypervolume.png` | dominance de Pareto, hypervolume | `plot_concept_diagrams.py` |
+| `wcmols_loop.png`, `weight_sweep_truncation.png` | boucle de W-CMOLS, balayage tronqué des poids | `plot_weight_sweep.py` |
+| `cloud_diversity.png` | espacement et étendue d'un cloud | `plot_diversity_diagram.py` |
+| `local_search_descent.png`, `neural_network.png`, `annealing_temperature.png`, `markov_decision_process.png` | illustrations de l'état de l'art | — |
 
 ![Fronts de Pareto sur l'instance 750.2](figures/images/fronts_competitors_750.2.png)
 
