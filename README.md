@@ -63,6 +63,7 @@ l'agent DQN, et vérifie que chaque hypervolume est identique au résultat publi
 |:---|:---|:---|
 | Nombre de directions du cloud L | `seeding/screen_direction_count.py` | `results/screening/` |
 | W-CMOLS et variantes amorcées G, L, U | `seeding/evaluate_seeded_solver.py` | `results/{wcmols,seeded_greedy,seeded_llm,seeded_union}_<inst>.json` |
+| Tests statistiques de l'amorçage | `seeding/summarize_seeding_results.py` | `results/seeding_results_summary.md` |
 | Effet propre des décisions du LLM | `seeding/evaluate_seeded_solver.py ctrl`, `seeding/llm_effect_test.py` | `results/seeded_llm_ablation_*`, `results/llm_effect_summary.md` |
 | Modèle de coût | `configuration/fit_cost_model.py`, `configuration/calibrate_cost_model.py` | `models/cost_model_*.json` |
 | Variantes configurées GQ, LQ, UQ | `configuration/train_agent.py`, `configuration/evaluate_agent.py` | `results/agent_*_budget0.8.json`, `results/agent_results_summary.md` |
@@ -77,6 +78,11 @@ l'agent DQN, et vérifie que chaque hypervolume est identique au résultat publi
 | Comparaison aux concurrents | `comparison/compare_competitors.py`, `comparison/competitor_tables.py` | `results/competitor_comparison.json`, `results/competitor_tables.md` |
 
 Toutes les exécutions emploient les mêmes germes : relancer un script reproduit les hypervolumes rapportés.
+
+Tests statistiques : Mann-Whitney U unilatéral instance par instance (50 répétitions ; 20 face aux concurrents),
+Wilcoxon apparié sur les neuf moyennes d'instances, Friedman puis correction de Holm face aux concurrents, A12 pour
+l'instance exclue. Les résultats des tests sont dans les fichiers de synthèse (`results/*.md`,
+`results/validation/validation_summary.md`) et dans `results/competitor_comparison.json`.
 
 Politiques entraînées fournies dans `models/` : `policy_union` (UQ, LQ), `policy_greedy` (GQ), `policy_greedy_pretrained`
 (point de départ de leur entraînement), `policy_union_leave_one_out_<inst>` (neuf politiques entraînées chacune sans
