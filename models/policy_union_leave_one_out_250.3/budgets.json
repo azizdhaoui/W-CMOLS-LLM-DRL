@@ -1,0 +1,24 @@
+{
+  "budget_ratio": 1.0,
+  "budgets_seconds": {
+    "250.2": 0.3964991073608399,
+    "250.4": 1.839302864074707,
+    "500.2": 1.1002908363342285,
+    "500.3": 2.6434081077575686,
+    "500.4": 6.046185768127442,
+    "750.2": 2.247529830932617,
+    "750.3": 4.883693439483643,
+    "750.4": 11.53304393386841
+  },
+  "mu_speed_bonus": 0.03,
+  "warm_start": null,
+  "cost_model": "models/cost_model_union.json",
+  "fresh_times": "models/wcmols_reference_times.json",
+  "solver": "noreinj",
+  "seeds_pattern": "clouds/union_{inst}.txt",
+  "lambda3": 0.1,
+  "guard": "if_fits",
+  "nu": 0.2,
+  "speed_bonus": false,
+  "exclude": "250.3"
+}

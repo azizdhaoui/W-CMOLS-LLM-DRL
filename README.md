@@ -17,6 +17,7 @@ instances de Zitzler et Thiele (1999) : 250, 500 et 750 objets, 2, 3 et 4 object
 
 ```
 demo.py               démonstration rapide (moins d'une minute)
+docs/memoire.pdf      mémoire
 paths.py, common.py   emplacements du dépôt ; instances, graines gloutonnes, voisins, solveur, hypervolume
 data/instances/       neuf instances (format Zitzler-Thiele) et fichiers de vecteurs de poids de W-CMOLS
 data/reference/       bornes de normalisation de l'hypervolume et références de W-CMOLS, par instance
@@ -68,14 +69,19 @@ l'agent DQN, et vérifie que chaque hypervolume est identique au résultat publi
 | Politique appliquée sans cloud | `configuration/evaluate_agent.py WQ` | `results/agent_no_cloud_budget0.8.json` |
 | Choix du facteur de budget | `configuration/evaluate_agent.py` (10 répétitions) | `results/agent_union_budget*_screening.json` |
 | Écart à l'oracle empirique | `validation/oracle_gap.py` | `results/validation/oracle_*.json` |
-| Instance exclue de l'entraînement | `configuration/train_agent.py --exclude`, `evaluate_agent.py` | `results/agent_union_leave_one_out_budget0.8.json` |
-| Ablation Dueling / rejeu priorisé | `configuration/train_agent.py --no-dueling / --no-per` | `results/agent_greedy_ablation_*_budget0.8.json` |
+| Instance exclue de l'entraînement | `configuration/train_agent.py --exclude`, `evaluate_agent.py` | `results/agent_union_leave_one_out_budget0.8.json`, `models/policy_union_leave_one_out_<inst>/` |
+| Ablation Dueling / rejeu priorisé | `configuration/train_agent.py --no-dueling / --no-per` | `results/agent_greedy_ablation_*_budget0.8.json`, `models/policy_greedy_ablation_*/` |
 | SMAC3 | `validation/smac3_comparison.py` | `results/validation/smac3*.json` |
 | Temps remesurés le même jour | `validation/same_day_timing.py` | `results/validation/same_day_timing.json` |
 | Synthèse des validations | `validation/summarize_validations.py` | `results/validation/validation_summary.md` |
 | Comparaison aux concurrents | `comparison/compare_competitors.py`, `comparison/competitor_tables.py` | `results/competitor_comparison.json`, `results/competitor_tables.md` |
 
 Toutes les exécutions emploient les mêmes germes : relancer un script reproduit les hypervolumes rapportés.
+
+Politiques entraînées fournies dans `models/` : `policy_union` (UQ, LQ), `policy_greedy` (GQ), `policy_greedy_pretrained`
+(point de départ de leur entraînement), `policy_union_leave_one_out_<inst>` (neuf politiques entraînées chacune sans
+l'instance indiquée) et `policy_greedy_ablation_{full,noduel,noper}` (ablation). Pour évaluer l'une d'elles :
+`CKPT_TAG=<nom sans le préfixe policy_>`, par exemple `CKPT_TAG=union_leave_one_out_750.2 ONLY=750.2`.
 
 ## Reproduire
 
