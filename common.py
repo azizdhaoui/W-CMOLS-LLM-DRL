@@ -2,7 +2,7 @@
 
 Test isolé : ne modifie aucun fichier canonique. Les îles reprennent à
 l'identique generate_smart_neighbors.py ; le glouton reprend la formule du
-cloud G (gen_weighted_greedy_seeds.py), pour que L et G ne diffèrent que par
+cloud G (build_greedy_cloud.py), pour que L et G ne diffèrent que par
 l'étape de décision.
 """
 from __future__ import annotations
@@ -203,7 +203,7 @@ def solve(cloud, inst: str, runs: int, workdir: Path, nbl: int = 100, reinject: 
     sys.path.insert(0, str(HERE / "solver"))
     import importlib
     solver = importlib.import_module("moacp_mut" if reinject else "moacp_noreinj")
-    from rl_agent.hv_calculator import InstanceBounds, compute_hv, parse_all_runs
+    from hypervolume.hv_calculator import InstanceBounds, compute_hv, parse_all_runs
     k = int(inst.split(".")[1])
     pr = {"alpha": 10, "L": 5, "kappa": 0.05, "NBL": nbl, **(params or {})}
     workdir.mkdir(parents=True, exist_ok=True)

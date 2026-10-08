@@ -1,0 +1,18 @@
+{
+  "budget_ratio": 1.0,
+  "budgets_seconds": {
+    "250.2": 0.39841158390045167,
+    "250.3": 0.9345488786697388,
+    "250.4": 2.176331377029419,
+    "500.2": 1.1798480033874512,
+    "500.3": 3.427227783203125,
+    "500.4": 7.72820463180542,
+    "750.2": 2.5554901361465454,
+    "750.3": 6.557087659835815,
+    "750.4": 15.447346019744874
+  },
+  "mu_speed_bonus": 0.03,
+  "warm_start": "earlier pretraining stage (not included)",
+  "cost_model": "models/cost_model_base.json",
+  "fresh_times": "models/wcmols_reference_times.json"
+}

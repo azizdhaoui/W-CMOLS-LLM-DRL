@@ -6,6 +6,6 @@ matplotlib==3.10.7
 pymoo==0.6.1.5
 Cython==3.1.2
 setuptools
-# validation/val_smac_final.py uniquement
+# validation/smac3_comparison.py uniquement
 smac==2.4.0
 ConfigSpace==1.2.2
