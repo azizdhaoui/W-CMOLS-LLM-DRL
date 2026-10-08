@@ -22,6 +22,7 @@ sys.path[:0] = [str(ROOT), str(ROOT / "comparison")]
 import competitor_data as D  # noqa: E402
 FR = ROOT / "results" / "fronts"
 OUT = ROOT / "figures" / "out"
+OUT.mkdir(parents=True, exist_ok=True)
 CH = sys.argv[1] if len(sys.argv) > 1 else "ch4"
 PREFIX = "fig4_" if CH == "ch4" else "fig5_"
 

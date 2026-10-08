@@ -93,11 +93,22 @@ RUNS=50 NOGUARD=1 CKPT_TAG=union  python configuration/evaluate_agent.py UQ 0.8
 RUNS=50 NOGUARD=1 CKPT_TAG=greedy python configuration/evaluate_agent.py GQ 0.8
 ```
 
-## Données non incluses
+## Fronts de Pareto
 
-- Les fronts bruts de chaque exécution (`results/fronts/`, environ 1 Go) et ceux des concurrents
-  (`competitor_fronts/`) ne sont pas versionnés ; les valeurs qui en sont tirées sont dans `results/`.
-  Les scripts de comparaison et de figures les lisent à ces emplacements.
+Les fronts bruts ne sont pas versionnés ; ils sont fournis en archives dans la page *Releases* du dépôt :
+
+- `pareto_fronts.zip` (53 Mo) : fronts de W-CMOLS et de nos variantes, 50 exécutions par instance
+  (`results/fronts/`), et fronts des treize concurrents, 20 exécutions (`competitor_fronts/`) ;
+- `gwaco_reference_fronts.zip` (19 Mo) : fronts d'un algorithme de colonie de fourmis du laboratoire,
+  employés seulement dans l'ensemble de référence de l'indicateur epsilon (`competitor_fronts/gwaco/`).
+
+Décompresser les archives à la racine du dépôt. Chaque système a deux fichiers par instance :
+`raw_*.txt` (une solution par ligne, valeurs des objectifs, exécutions à la suite) et `sizes_*.txt`
+(nombre de solutions de chaque exécution). Les fronts permettent de relancer
+`comparison/compare_competitors.py`, `comparison/our_systems_metrics.py` et les scripts de `figures/`.
+
+## Concurrents
+
 - Les concurrents sont des implémentations publiées, employées sans modification algorithmique :
   PlatEMO (MATLAB), PISA, mobkp et le code C++ de MOEA/D. Seuls les lanceurs et adaptateurs d'entrée/sortie
   sont fournis (`comparison/competitors/`) ; les emplacements des binaires se règlent par variables

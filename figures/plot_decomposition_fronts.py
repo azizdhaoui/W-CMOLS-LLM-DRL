@@ -92,7 +92,7 @@ def load_capped(raw_path, sizes_path, cap_runs, cap_pts=3000):
 
 def load_all(inst):
     return {
-        "baseline": load_capped(HV / f"raw_pure_{inst}.txt", HV / f"sizes_pure_{inst}.txt", RUN_CAP),
+        "baseline": load_capped(HV / f"raw_baseline_{inst}.txt", HV / f"sizes_baseline_{inst}.txt", RUN_CAP),
         "s1_union": load_capped(FINAL / f"seeded_union_{inst}_raw.txt", FINAL / f"seeded_union_{inst}_sizes.txt", RUN_CAP),
         "hyb_union": load_capped(FINAL / f"agent_union_{inst}_raw.txt", FINAL / f"agent_union_{inst}_sizes.txt", RUN_CAP),
         "moead": load_capped(V3 / f"competitor_fronts/moead_fronts/raw_moead_{inst}.txt",
