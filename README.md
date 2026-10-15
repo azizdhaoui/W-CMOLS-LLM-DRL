@@ -155,7 +155,7 @@ Les figures sont dans `figures/images/` et sont régénérées à l'identique pa
 | `concept_dominance.png`, `concept_hypervolume.png` | dominance de Pareto, hypervolume | `plot_concept_diagrams.py` |
 | `wcmols_loop.png`, `weight_sweep_truncation.png` | boucle de W-CMOLS, balayage tronqué des poids | `plot_weight_sweep.py` |
 | `cloud_diversity.png` | espacement et étendue d'un cloud | `plot_diversity_diagram.py` |
-| `local_search_descent.png`, `neural_network.png`, `annealing_temperature.png`, `markov_decision_process.png` | illustrations de l'état de l'art | — |
+| `local_search_descent.png`, `neural_network.png`, `llm_temperature.png`, `markov_decision_process.png` | illustrations de l'état de l'art | — |
 
 ![Fronts de Pareto sur l'instance 750.2](figures/images/fronts_competitors_750.2.png)
 
